@@ -37,7 +37,7 @@ export default function TileInstallationServices() {
       <div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
       >
-        {services.map((service, index) => (
+        {services.map((service) => (
           <Card key={service.id} className="text-center hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
