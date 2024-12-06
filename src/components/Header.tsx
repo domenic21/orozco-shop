@@ -8,10 +8,10 @@ export default function Header () {
           <h1 className="text-2xl font-bold text-gray-800">TileShop</h1>
           <nav>
             <ul className="flex space-x-4">
-              <li><a href="#" className="text-gray-600 hover:text-gray-800">Home</a></li>
+              <li><a href="/" className="text-gray-600 hover:text-gray-800">Home</a></li>
               <li><a href="#" className="text-gray-600 hover:text-gray-800">Products</a></li>
               <li><a href="#" className="text-gray-600 hover:text-gray-800">Gallery</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-gray-800">Services</a></li>
+              <li><a href={'/Installations'} className="text-gray-600 hover:text-gray-800">Services</a></li>
               <li><a href="#" className="text-gray-600 hover:text-gray-800">Contact</a></li>
             </ul>
 
