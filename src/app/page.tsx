@@ -1,7 +1,6 @@
 
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronRight, Search, Menu } from 'lucide-react'
 import Hero from '@/components/Hero'
 import ProductsHome from '@/components/ProductsHome'
 import FeatureHome from '@/components/FeatureHome'
