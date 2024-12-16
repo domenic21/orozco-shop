@@ -39,7 +39,7 @@ export default function Header () {
                     { name: 'Locations', path: '/locations' },
                     { name: 'Gallery', path: '/gallery' },
                     { name: 'Installations', path: '/Installations' },
-                    { name: 'Contact Us', path: '/contact' }
+                    { name: 'Contact Us', path: '/Contact' }
                     ].map((item) => (
                     <li key={item.name}>
                       <Link href={item.path} className="text-gray-600 hover:text-gray-800 transition-colors">
@@ -76,7 +76,7 @@ export default function Header () {
                     { name: 'Locations', path: '/locations' },
                     { name: 'Gallery', path: '/gallery' },
                     { name: 'Installations', path: '/Installations' },
-                    { name: 'Contact Us', path: '/contact' }
+                    { name: 'Contact Us', path: '/Contact' }
                     ].map((item) => (
                     <li key={item.name}>
                       <Link href={item.path} className="text-gray-600 hover:text-gray-800 transition-colors">

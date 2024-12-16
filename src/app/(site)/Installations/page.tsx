@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent,  CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, PenToolIcon as Tool, Clock, Star, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 const services = [
     { id: 1, name: 'Residential Installation', icon: '/floringexample.jpg' },
@@ -124,10 +125,13 @@ export default function TileInstallationServices() {
       >
         <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
         <p className="mb-8 text-lg">Contact us today for a free consultation and quote.</p>
+        <Link href="/Contact">
         <Button size="lg" className="group">
+        
           Get a Free Quote
           <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
         </Button>
+        </Link>
       </div>
     </div>
   )
