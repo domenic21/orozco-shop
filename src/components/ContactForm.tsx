@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -22,27 +21,14 @@ import { Mail, Phone, MapPin } from 'lucide-react'
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission here
-    console.log('Form submitted:', { name, email, message })
+    //console.log('Form submitted:', { name, email, message })
     // Reset form fields
     setName('')
     setEmail('')
     setMessage('')
     const id = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
     const template = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const serviceParams = {
-      user_id: process.env.NEXT_PUBLIC_EMAILJS_USER_ID!,
-      template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-      key: process.env.NEXT_PUBLIC_EMAILJS_KEY_ID!,
-     
-    };
-    const templateParams = {
-      name: name,
-      email: email,
-      message: message,
-      phoneNumber: phoneNumber,
-    };
-
-
+    
     emailjs
       .sendForm(
         id,
