@@ -11,7 +11,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 
 
 
- const contactform:React.FC = () => {
+ const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -28,7 +28,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
     setMessage('')
     const id = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
     const template = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    
+
     emailjs
       .sendForm(
         id,
@@ -59,7 +59,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
         <Card>
           <CardHeader>
             <CardTitle>Send Us a Message</CardTitle>
-            <CardDescription>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+            <CardDescription>We&apos;d love to hear from you. Fill out the form below and we&apos;ll get back to you as soon as possible.</CardDescription>
           </CardHeader>
           <CardContent>
           
@@ -140,4 +140,4 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 
 }
 
-export default contactform;
+export default ContactForm;
