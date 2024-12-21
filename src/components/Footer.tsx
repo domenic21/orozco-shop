@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button"
 
-import { Input } from "@/components/ui/input"
 import { Clock, Mail, MapPin, Phone } from "lucide-react"
-import FooterContact from "./FooterContact"
+
 
 
 export default function Footer() {

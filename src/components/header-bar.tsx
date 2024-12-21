@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle } from 'lucide-react'
+import { MapPin, Phone,  Facebook, Instagram, MessageCircle } from 'lucide-react'
 
 export default function HeaderBar() {
   return (
