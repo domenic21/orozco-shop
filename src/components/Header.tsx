@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { Input } from "@/components/ui/input"
 import { Menu } from 'lucide-react'
+import HeaderBar from './header-bar'
 
 
 export default function Header () {
@@ -13,11 +14,12 @@ export default function Header () {
 
   return (
     <div className="">
+      <HeaderBar />
         {/* Header with Search and Navigation */}
         <header className="bg-white shadow-sm sticky top-0 z-50 ">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-light tracking-wider text-gray-800">
+            <Link href="/" className="text-3xl font-semibold tracking-wider text-gray-800">
             <Image
                 src="/logoLetters.png"
                 alt="Company Logo"
@@ -38,10 +40,10 @@ export default function Header () {
                     {[
                     //{ name: 'Locations', path: '/locations' },
                     //{ name: 'Gallery', path: '/gallery' },
-                    { name: 'Installations', path: '/Installations' },
+                    { name: 'Construction Services', path: '/Construction' },
                     { name: 'Contact Us', path: '/Contact' }
                     ].map((item) => (
-                    <li key={item.name}>
+                    <li key={item.name} className=' text-2xl'>
                       <Link href={item.path} className="text-gray-600 hover:text-gray-800 transition-colors">
                       {item.name}
                       </Link>
@@ -75,7 +77,7 @@ export default function Header () {
                    // { name: 'Products', path: '/products' }, 
                     //{ name: 'Locations', path: '/locations' },
                     //{ name: 'Gallery', path: '/gallery' },
-                    { name: 'Installations', path: '/Installations' },
+                    { name: '  Construction Services', path: '/Construction' },
                     { name: 'Contact Us', path: '/Contact' }
                     ].map((item) => (
                     <li key={item.name}>

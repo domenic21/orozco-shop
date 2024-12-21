@@ -5,14 +5,18 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent,  CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CheckCircle, PenToolIcon as Tool, Clock, Star, ChevronRight } from 'lucide-react'
+import { CheckCircle, PenToolIcon  as Tool, Clock, Star, ChevronRight, HouseIcon, PenToolIcon, Building, Hammer, Wrench} from 'lucide-react'
+
 import Link from 'next/link'
 
+
+
+
 const services = [
-    { id: 1, name: 'Residential Installation', icon: '/floringexample.jpg' },
-    { id: 2, name: 'Commercial Installation', icon: '/floringexample.jpg' },
-    { id: 3, name: 'Custom Tile Design', icon: '/floringexample.jpg' },
-    { id: 4, name: 'Tile Repair', icon: '/floringexample.jpg' },
+  { id: 1, name: 'Residential Installation', icon: <HouseIcon className='text-white' /> },
+  { id: 2, name: 'Commercial Installation', icon: <Building className='text-white' /> },
+  { id: 3, name: 'Custom Tile Design', icon: <Hammer  className='text-white' /> },
+  { id: 4, name: 'Tile Repair', icon: <Wrench className='text-white' /> },
 ]
 
 const projects = [
@@ -42,7 +46,7 @@ export default function TileInstallationServices() {
           <Card key={service.id} className="text-center hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <div className="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
-                <Image src={service.icon} alt={service.name} width={32} height={32} />
+                {service.icon}
               </div>
               <CardTitle>{service.name}</CardTitle>
             </CardHeader>

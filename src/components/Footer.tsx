@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
 
 import { Input } from "@/components/ui/input"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import FooterContact from "./FooterContact"
 
 
 export default function Footer() {
@@ -30,16 +31,34 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-xl font-bold mb-4">Newsletter</h4>
-              <p className="text-gray-300 mb-4">Subscribe to our newsletter for the latest trends and exclusive offers.</p>
-              <form className="flex">
-                <Input type="email" placeholder="Your email" className="rounded-r-none" />
-                <Button type="submit" className="rounded-l-none">Subscribe</Button>
-              </form>
+          {/* Business Hours Section */}
+        <div>
+          <h3 className="text-xl  mb-4 text-white" >
+            BUSINESS HOURS
+          </h3>
+          <div className="space-y-2">
+            <div className="flex items-start space-x-3">
+              <Clock className="w-5 h-5 mt-1 text-white" />
+              <div className="space-y-2">
+                <div>
+                  <p className="text-white">Mon - Sat</p>
+                  <p className="text-white">8:00am - 5:00pm</p>
+                </div>
+                <div>
+                  <p className="text-white">Sunday</p>
+                  <p className="text-white">Closed</p>
+                </div>
+             
+              </div>
+            </div>
+        
+            
+     
             </div>
           </div>
-        </div>
+          </div>
+          </div>
+
       </footer>
 
     )}
