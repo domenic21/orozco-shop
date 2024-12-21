@@ -26,18 +26,18 @@ export default function Header () {
             />
             </Link>
             <div className="hidden md:flex items-center space-x-6">
-              <Input 
+              {/*<Input 
                 type="search" 
                 placeholder="Search..." 
                 className="w-64"
                 
-              />
+                
+              />*/}
               <nav>
                 <ul className="flex space-x-6">
                     {[
-                    { name: 'Products', path: '/products' }, 
-                    { name: 'Locations', path: '/locations' },
-                    { name: 'Gallery', path: '/gallery' },
+                    //{ name: 'Locations', path: '/locations' },
+                    //{ name: 'Gallery', path: '/gallery' },
                     { name: 'Installations', path: '/Installations' },
                     { name: 'Contact Us', path: '/Contact' }
                     ].map((item) => (
@@ -72,9 +72,9 @@ export default function Header () {
               <nav>
               <ul className=" space-y-4">
                     {[
-                    { name: 'Products', path: '/products' }, 
-                    { name: 'Locations', path: '/locations' },
-                    { name: 'Gallery', path: '/gallery' },
+                   // { name: 'Products', path: '/products' }, 
+                    //{ name: 'Locations', path: '/locations' },
+                    //{ name: 'Gallery', path: '/gallery' },
                     { name: 'Installations', path: '/Installations' },
                     { name: 'Contact Us', path: '/Contact' }
                     ].map((item) => (

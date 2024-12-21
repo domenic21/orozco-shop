@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Hero from '@/components/Hero'
 import ProductsHome from '@/components/ProductsHome'
 import FeatureHome from '@/components/FeatureHome'
+import BrandsHome from '@/components/BrandsHome'
 
 export default function HomePage() {
 
@@ -46,8 +47,10 @@ export default function HomePage() {
         </div>
       </section>
 
-     <ProductsHome />
+     
      <FeatureHome />
+     <BrandsHome />
+     
       
 
       {/* Contact Section */}
