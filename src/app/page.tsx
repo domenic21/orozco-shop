@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import Hero from '@/components/Hero'
-import ProductsHome from '@/components/ProductsHome'
 import FeatureHome from '@/components/FeatureHome'
 import BrandsHome from '@/components/BrandsHome'
 

@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-xl font-bold mb-4">About TileHaven</h4>
-              <p className="text-gray-300">We are passionate about providing high-quality tiles and exceptional design services to transform your living spaces.</p>
+              <h4 className="text-xl font-bold mb-4">Manuel Orosco New Home Builder & Home Supplies</h4>
+              <p className="text-gray-300">We are passionate about providing high-quality supplies and exceptional construction services to transform your living spaces.</p>
             </div>
             <div>
               <h4 className="text-xl font-bold mb-4">Contact Us</h4>
@@ -22,11 +22,11 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-5 h-5 mr-2" />
-                  <span>info@tilehaven.com</span>
+                  <span>email</span>
                 </li>
                 <li className="flex items-center">
                   <MapPin className="w-5 h-5 mr-2" />
-                  <span>123 Tile Street, Design City, TC 12345</span>
+                  <span>760 Bound Brook Rd, Dunellen, NJ 08812</span>
                 </li>
               </ul>
             </div>
