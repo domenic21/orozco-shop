@@ -101,12 +101,14 @@ import { Mail, Phone, MapPin } from 'lucide-react'
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-4">
                 <Phone className="text-primary" />
-                <span>(908) 472-9388</span>
+                <span>732-713-3607</span>
+                  <span>732-713-7765</span>
+                  <span>732--259-4200</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="text-primary" />
                 <span>
-                oroscohomebuildersinc@gmail.com</span>
+                sales@manuelhomesupplies.com</span>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="text-primary" />

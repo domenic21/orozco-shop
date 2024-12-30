@@ -20,11 +20,11 @@ export default function HeaderBar() {
             className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span>1-800-268-3108</span>
+            <span>732-713-3607</span>
           </Link>
 
           <Link 
-           href="https://wa.me/120155449--"
+           href="https://wa.me/17327133607"
             className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
               target="_blank"
                 rel="noopener noreferrer"

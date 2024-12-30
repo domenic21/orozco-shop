@@ -17,11 +17,14 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Phone className="w-5 h-5 mr-2" />
-                  <span>(123) 456-7890</span>
+                  <span>732-713-3607</span>
+                  <span>732-713-7765</span>
+                  <span>732--259-4200</span>
+                  
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-5 h-5 mr-2" />
-                  <span>email</span>
+                  <span>sales@manuelhomesupplies.com</span>
                 </li>
                 <li className="flex items-center">
                   <MapPin className="w-5 h-5 mr-2" />

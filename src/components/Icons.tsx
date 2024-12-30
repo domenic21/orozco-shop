@@ -5,7 +5,7 @@ const FloatingChatIcon: React.FC = () => {
             items-center justify-center shadow-lg cursor-pointer"
         >
             <a
-                href="https://wa.me/120155449--"
+                href="https://wa.me/17327133607"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat with us on WhatsApp"
