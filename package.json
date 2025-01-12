@@ -2,6 +2,7 @@
   "name": "manuel-orosco-web",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,11 +11,14 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.2",
+    "@strapi/blocks-react-renderer": "^1.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.2",
     "lucide-react": "^0.468.0",
     "motion": "^11.14.4",
     "next": "15.1.0",

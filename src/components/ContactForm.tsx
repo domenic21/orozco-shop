@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 
 
@@ -101,12 +101,23 @@ import { Mail, Phone, MapPin } from 'lucide-react'
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-4">
                 <Phone className="text-primary" />
-                <span>(908) 472-9388</span>
+                <span>732-713-360</span>
+                 
+              </div>
+              <div className="flex items-center space-x-4">
+                <Phone className="text-primary" />
+           
+                  <span>732-713-7765</span>
+              
+              </div>
+              <div className="flex items-center space-x-4">
+                <Phone className="text-primary" />
+                  <span>732-259-4200</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Mail className="text-primary" />
                 <span>
-                oroscohomebuildersinc@gmail.com</span>
+                sales@manuelhomesupplies.com</span>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="text-primary" />
