@@ -1,5 +1,6 @@
 
 
 
-GET http://localhost:1337/api/showroom?fields[0]=title&fields[1]=subtitle&populate=address&populate=image
+
+GET http://localhost:1337/api/product-brands?populate[image][fields][0]=url&fileds[0]=name&fields[1]=slug&fields[2]=description&fields[3]=type&fields[4]=brand
 Authorization: Bearer 151534567bd1c9dc5ad642f986736d3c17705437c03d6cea3843d8e7bc9778d2262e820604fc3fd712dc58089b6d613e3638c8acbb95cf5f02d43b612e8e7d0fc948b79647df3cd5a857eec8adf79602d6905ff98e52f53af25c2657fb69e040e94a767c1ba20fcd52e751c492783afe1b37b25517bd28211412551722aacdcb

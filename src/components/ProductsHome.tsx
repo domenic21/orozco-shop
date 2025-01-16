@@ -1,3 +1,4 @@
+
 import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
@@ -8,55 +9,41 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { getProducts } from "@/lib/get-products";
 
-export default function ProductsHome() {
+interface Product {
+  name: string;
+  description: string;
+  brand: string;
+  image_url: string;
+  category: string;
+}
+
+
+
+export const ProductsHome = async () => {
+  const products = await getProducts();
+  console.log(products);
+  const productArray: Product[] = products.data[0].scraping.products;
   return (
-    <div>
-      {/* Product Categories */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-light mb-12 text-gray-800">
-            PRODUCT CATEGORIES
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Luxury Marble",
-                image: "/categories/bathroom-tiles.jpg?height=600&width=600",
-              },
-              {
-                name: "Premium Porcelain",
-                image: "/categories/porcelain-tiles.jpg?height=600&width=600",
-              },
-              {
-                name: "Designer Collections",
-                image: "/categories/mosaic-tiles.jpg?height=600&width=600",
-              },
-            ].map((category, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-md">
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-light text-gray-800">
-                    {category.name}
-                  </h3>
-                  <ChevronRight className="w-5 h-5 text-gray-600 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            ))}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {productArray.map((product, index) => (
+        <div key={index} className="relative bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="aspect-auto">
+            <img
+              src={product.image_url}
+              alt={product.name}
+              className="w-[100px] h-[100px] object-cover"
+            />
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+            <p className="text-sm text-gray-600">{product.description}</p>
+            <p className="text-sm text-gray-600">{product.brand}</p>
+            <p className="text-sm text-gray-600">{product.category}</p>
           </div>
         </div>
-
-
-      </section>
-      
+      ))}
     </div>
   );
-}
+};

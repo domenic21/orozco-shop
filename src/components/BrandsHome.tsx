@@ -1,80 +1,56 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
-const products = [
-  {
-    name: "Q™ PREMIUM NATURAL QUARTZ",
-    subtitle: "COUNTERTOPS",
-    image: "/Brands/quartz.jpg?height=600&width=600&text=Quartz+Countertop",
-   
-  },
-  {
-    name: "EVERLIFE® WATERPROOF",
-    subtitle: "FLOORING",
-    image: "/Brands/everlife.jpg?height=400&width=600&text=Waterproof+Flooring",
+import { getProductBrands } from '@/lib/get-product-brands';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import { Card, CardContent } from './ui/card';
 
-  },
-  {
-    name: "ARTERRA PREMIUM® PORCELAIN",
-    subtitle: "PAVERS",
-    image: "/Brands/arterra.jpg?height=400&width=600&text=Porcelain+Pavers",
-   
-  },
-  {
-    name: "STILE® PORCELAIN SLABS",
-    subtitle: "",
-    image: "/Brands/stile.jpg?height=400&width=600&text=Porcelain+Slabs",
+
+
+
+
+export const BrandsHome = async () => {
+
+  const productBrands = await getProductBrands();
   
-  }
-]
-
-export default function ProductShowcase() {
+  
   return (
+  
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container md:mx-12 px-4 sm:mx-auto">
         <h2 className="text-4xl md:text-5xl font-light text-center mb-4" style={{ color: '#8a817c' }}>
           EXPLORE OUR BRANDS COLLECTIONS
         </h2>
         <p className="text-gray-600 text-center max-w-4xl mx-auto mb-16 text-lg">
           Discover our exceptional brands, crafted to meet the demands of both residential and commercial spaces, offering elegance and durability.
         </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product, index) => (
-            <Card 
-              key={index} 
-              className="bg-white border-gray-100 shadow-md overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-300"
-            >
-              <CardHeader className="p-0">
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="group-hover:scale-105 transition-transform duration-500"
+     
+        <Carousel className="w-full max-w-lg sm:max-w-xs md:max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto">
+      <CarouselContent className="-ml-2 md:-ml-3">
+        {productBrands.map((brands: any, index: number) => (
+          <CarouselItem key={index} className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/3">
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="aspect-square relative">
+                  <img
+                    src={brands.image }
+                    alt={`Product Brands Image ${index + 1}`}
+                    className="w-full h-full object-cover"
                   />
                 </div>
-              </CardHeader>
-              <CardContent className="p-6">
-              
-                <div className="text-center">
-                  <h3 
-                    className="text-lg font-medium mb-1" 
-                    style={{ color: '#8a817c' }}
-                  >
-                    {product.name}
-                  </h3>
-                  {product.subtitle && (
-                    <p className="text-gray-600">{product.subtitle}</p>
-                  )}
-                </div>
+                <p className='uppercase text-center py-2 px-1 text-sm sm:text-base' style={{ color: '#8a817c' }}>
+                  {brands.type}
+                </p>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" />
+    </Carousel>
       </div>
     </section>
+   
+    
   )
 }
 

@@ -1,6 +1,6 @@
-const {  STRAPI_TOKEN } = process.env;
-const { STRAPI_HOST} = process.env;
 
+
+ 
 
 
 //if (!STRAPI_HOST || !STRAPI_TOKEN) {
@@ -8,14 +8,14 @@ const { STRAPI_HOST} = process.env;
  //}
   
 export function query(url: string) {
-  return fetch(`${STRAPI_HOST}/api/${url}`, {
+  return fetch(`${process.env.NEXT_PUBLIC_STRAPI_HOST}/api/${url}`, {
     headers: {
-      Authorization: `Bearer ${STRAPI_TOKEN}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
     },
   })
   .then(res => res.json())
   .then(data => {
-    console.log(data);
+   
     return data;
   })
   .catch(error => {
