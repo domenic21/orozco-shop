@@ -2,6 +2,7 @@
 import { getProductBrands } from '@/lib/get-product-brands';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { Card, CardContent } from './ui/card';
+import Link from 'next/link';
 
 
 
@@ -26,7 +27,9 @@ export const BrandsHome = async () => {
         <Carousel className="w-full max-w-lg sm:max-w-xs md:max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto">
       <CarouselContent className="-ml-2 md:-ml-3">
         {productBrands.map((brands: any, index: number) => (
+         
           <CarouselItem key={index} className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/3">
+             <Link href={`/products/${brands.name}`} >
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="aspect-square relative">
@@ -41,6 +44,7 @@ export const BrandsHome = async () => {
                 </p>
               </CardContent>
             </Card>
+            </Link>
           </CarouselItem>
         ))}
       </CarouselContent>
