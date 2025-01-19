@@ -6,12 +6,14 @@ import Link from 'next/link';
 
 
 
-
+//Carousel for Brands in Home Page
 
 export const BrandsHome = async () => {
 
   const productBrands = await getProductBrands();
-  
+  console.log('====================================');
+  console.log(productBrands);
+  console.log('====================================');
   
   return (
   
@@ -40,8 +42,10 @@ export const BrandsHome = async () => {
                   />
                 </div>
                 <p className='uppercase text-center py-2 px-1 text-sm sm:text-base' style={{ color: '#8a817c' }}>
-                  {brands.type}
+                  {brands.types.join(' & ')} 
+                  
                 </p>
+               
               </CardContent>
             </Card>
             </Link>

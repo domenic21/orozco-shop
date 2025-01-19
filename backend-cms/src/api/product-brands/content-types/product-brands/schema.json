@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products_brands",
+  "info": {
+    "singularName": "product-brands",
+    "pluralName": "products-brands",
+    "displayName": "product-brands",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "product_brand": {
+      "type": "string"
+    },
+    "types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type.type",
+      "inversedBy": "product_brands"
+    }
+  }
+}

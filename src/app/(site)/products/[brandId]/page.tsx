@@ -1,6 +1,5 @@
 
 import { getProductsByBrand } from '@/lib/get-products';
-import Image from 'next/image'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -28,15 +27,19 @@ interface Product {
 }
 
 export default async function ProductPage({ params }: { params: { brandId: string } }) {
-  const products: ProductsResponse = await getProductsByBrand({ brandId: params.brandId });
+  const products: ProductsResponse = await getProductsByBrand({ brandId: params.brandId }
+   
+   );
  
   if (!products || !products.data || products.data.length === 0 || !products.data[0].scraping || !products.data[0].scraping.products) {
     return <div>No products available</div>;
   }
+  console.log('====================================');
+  console.log(products);
+  console.log('====================================');
 
   const productsArray: Product[] = products.data[0].scraping.products || [];
-
-
+  
   return (
     <div className="container mx-auto px-4 py-8">
     {/* Header with Filter and Sort */}
@@ -52,7 +55,7 @@ export default async function ProductPage({ params }: { params: { brandId: strin
     {/* Product Grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {productsArray.map((product) => (
-        <Card key={product.name } className="border-none shadow-none">
+        <Card key={product.alt} className="border-none shadow-none">
           <CardContent className="p-0 space-y-3">
             {/* Product Image Container */}
             <div className="relative aspect-square overflow-hidden bg-gray-100">

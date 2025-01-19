@@ -86,11 +86,25 @@ export default function Footer() {
              
               </div>
             </div>
-        
+           
             
      
             </div>
+            
           </div>
+          
+          </div>
+          <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              &copy; {new Date().getFullYear()} Manuel Orosco New Home Builder & Home Supplies. All rights reserved.
+            </p>
+            <p className="text-gray-400 text-sm">
+              <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link>
+            </p>
+            <p className="text-gray-400 text-sm">
+              Developed by <a href="https://dominioncodesolutions.com" className="text-gray-300 hover:text-white transition-colors">Dominion Code Solutions</a>
+            </p>
+           
           </div>
           </div>
 

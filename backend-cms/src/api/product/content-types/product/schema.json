@@ -24,22 +24,6 @@
       },
       "type": "text"
     },
-    "Image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "scraping": {
       "pluginOptions": {
         "i18n": {
@@ -50,9 +34,8 @@
     },
     "product_brand": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product-category.product-category",
-      "inversedBy": "product"
+      "relation": "oneToOne",
+      "target": "api::product-brands.product-brands"
     }
   }
 }

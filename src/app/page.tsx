@@ -23,11 +23,10 @@ export default function HomePage() {
       <Hero />
  
       <ShopCategories />
-      <FeatureHome />
       <BrandsHome />
 
       <InstallationHome />
-      <ProductsHome />
+  
       
 
      
