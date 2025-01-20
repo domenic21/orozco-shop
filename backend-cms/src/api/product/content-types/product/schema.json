@@ -36,6 +36,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product-brands.product-brands"
+    },
+    "extra_gallery": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "extra-gallery.extra-gallery-picture-products"
     }
   }
 }
