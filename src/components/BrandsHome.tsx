@@ -3,6 +3,7 @@ import { getProductBrands, ProductBrand } from '@/lib/get-product-brands';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { Card, CardContent } from './ui/card';
 import Link from 'next/link';
+import { image } from 'motion/react-client';
 
 
 
@@ -15,7 +16,7 @@ export const BrandsHome = async () => {
   console.log('====================================');
   console.log(productBrands);
   console.log('====================================');
-  
+  console.log(image)
   return (
   
     <section className="py-20 bg-white">
@@ -37,7 +38,7 @@ export const BrandsHome = async () => {
               <CardContent className="p-0">
                 <div className="aspect-square relative">
                   <img
-                    src={brands.image.url }
+                    src={brands.image.url}
                     alt={`Product Brands Image ${index + 1}`}
                     className="w-full h-full object-cover"
                   />

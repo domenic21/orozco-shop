@@ -22,7 +22,7 @@ export async function getProductBrands() {
 
     return res.data.map((product_brands: ProductBrand) => {
       const { name, description, image: rawImage, slug, types, product_brand } = product_brands;
-      const image = `${rawImage.url}`;
+      const image = rawImage.url;
       const typesStrings = types.map((type) => type.title); // Assuming 'title' is the string field in the 'types' relation
       return { name, description, image, slug, types: typesStrings, product_brand };
     });
