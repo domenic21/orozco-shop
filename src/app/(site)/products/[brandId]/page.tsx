@@ -1,7 +1,8 @@
-
 import { getProductsByBrand } from '@/lib/get-products';
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import React from 'react';
+import { Package } from 'lucide-react';
 
 interface ProductsResponse {
   data: {
@@ -11,8 +12,6 @@ interface ProductsResponse {
   }[];
 }
 
-import React from 'react';
-import { Package } from 'lucide-react';
 
 interface Product {
   id?: string;
@@ -27,9 +26,9 @@ interface Product {
 }
 
 export default async function ProductPage({ params }: { params: { brandId: string } }) {
-  const products: ProductsResponse = await getProductsByBrand({ brandId: params.brandId }
-   
-   );
+  const { brandId } = params as { brandId: string };
+  
+  const products: ProductsResponse = await getProductsByBrand({ brandId });
  
   if (!products || !products.data || products.data.length === 0 || !products.data[0].scraping || !products.data[0].scraping.products) {
     return <div>No products available</div>;
