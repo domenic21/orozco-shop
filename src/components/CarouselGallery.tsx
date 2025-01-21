@@ -12,7 +12,7 @@ export default function ShowroomLocation() {
       const result = useGetShowroomCarousel() as CarouselProps | null;
       
     
-   const imagesCarousel = result?.resultCarousel?.map(image => `${process.env.NEXT_PUBLIC_STRAPI_HOST}${image}`) || [];
+   const imagesCarousel = result?.resultCarousel?.map(image => `${image}`) || [];
 
   return (
     
