@@ -16,7 +16,7 @@ export const Hero = () => {
   }
 
   const { title, description, HeroImage } = result.data;
-  const image = `${process.env.NEXT_PUBLIC_STRAPI_HOST}${HeroImage.formats.large.url}`;
+  const image = HeroImage.formats.large.url;
   
   return (
     <main className="flex-grow">
