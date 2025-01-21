@@ -26,11 +26,11 @@ export const Showroom = () => {
     return <div>Loading...</div>;
   }
 
-  const { title, subtitle, image, address} = result.data;
+  const { title, subtitle, image} = result.data;
   const Image = `${process.env.NEXT_PUBLIC_STRAPI_HOST}${image.url}`;
 
  
-const Address = address.map((address) => `${address.address}`).join(', ');
+//const Address = address.map((address) => `${address.address}`).join(', ');
   return (
     <div className="bg-white">
           {/* Hero Section */}

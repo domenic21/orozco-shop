@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react';
 import AnimatedGallery from './AnimatedGallery'
 import { useGetShowroomCarousel } from '@/api/get-showroom';
 import { motion } from 'framer-motion';

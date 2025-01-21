@@ -1,4 +1,4 @@
-import { query } from "./strapi";
+
 
 const STRAPI_HOST = process.env.NEXT_PUBLIC_STRAPI_HOST;
 
