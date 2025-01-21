@@ -1,5 +1,5 @@
 
-import { BrandsHome } from '@/components/BrandsHome'
+import  BrandsHome  from '@/components/BrandsHome'
 import {Hero} from '@/components/Hero'
 import InstallationHome from '@/components/InstallationHome'
 import ShopCategories from '@/components/ShopCategories'
