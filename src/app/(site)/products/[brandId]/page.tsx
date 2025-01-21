@@ -29,7 +29,7 @@ interface Product {
 
 export default async function ProductPage(props:{params:Promise<{brandId:string}>}) {
   const  params  = await props.params;
-  const products: ProductsResponse = await getProductsByBrand({ brandId: params.brandId });
+  const products: ProductsResponse = await getProductsByBrand(params.brandId);
  
   if (!products || !products.data || products.data.length === 0 || !products.data[0].scraping || !products.data[0].scraping.products) {
     return <div>No products available</div>;

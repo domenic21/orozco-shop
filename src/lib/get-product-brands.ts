@@ -1,4 +1,3 @@
-
 export interface ProductBrand {
   id: number;
   documentId: string;
@@ -27,9 +26,6 @@ export interface ProductBrand {
         name: string;
         path: string | null;
         size: number;
-        width: number;
-        height: number;
-        sizeInBytes: number;
       };
     };
     hash: string;
@@ -61,12 +57,13 @@ export async function getProductBrands() {
       throw new Error(`Failed to fetch products. Status: ${res.status}`);
     }
 
-    const data = await res.json();
+    const responseData = await res.json();
+    const data = Array.isArray(responseData.data) ? responseData.data : []; // Ensure 'data' is an array
 
     return data.map((product_brands: ProductBrand) => {
-      const { name, description, image: rawImage, slug, types, product_brand } = product_brands;
-      const image = rawImage.url;
-      const typesStrings = types.map((type) => type.title); // Assuming 'title' is the string field in the 'types' relation
+      const { name, description, image, slug, types, product_brand } = product_brands;
+     
+      const typesStrings = types.map((type: { title: string }) => type.title); // Assuming 'title' is the string field in the 'types' relation
       return { name, description, image, slug, types: typesStrings, product_brand };
     });
   } catch (error) {
