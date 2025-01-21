@@ -2,7 +2,7 @@ import { query } from "./strapi";
 
 const STRAPI_HOST = process.env.NEXT_PUBLIC_STRAPI_HOST;
 
-interface ProductBrand {
+export interface ProductBrand {
   name: string;
   description: string;
   image: { url: string };
