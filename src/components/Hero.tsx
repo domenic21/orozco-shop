@@ -4,14 +4,9 @@ import { useGetHomeInfo } from "@/api/get-home";
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { HomeInfo } from "@/types/HomeResult";
 
-interface HomeInfo {
-  title: string;
-  description: string;
-  HeroImage: {
-    url: string;
-  };
-}
+
 
 export const Hero = () => {
   const result = useGetHomeInfo().result as { data: HomeInfo } | null;
@@ -21,8 +16,8 @@ export const Hero = () => {
   }
 
   const { title, description, HeroImage } = result.data;
-  const image = `${process.env.NEXT_PUBLIC_STRAPI_HOST}${HeroImage.url}`;
-
+  const image = `${process.env.NEXT_PUBLIC_STRAPI_HOST}${HeroImage.formats.large.url}`;
+  
   return (
     <main className="flex-grow">
       {/* Hero Section */}
