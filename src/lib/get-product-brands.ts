@@ -51,14 +51,22 @@ export interface ProductBrand {
 
 export async function getProductBrands() {
   const url = `products-brands?populate[image][fields][0]=url&populate[types][fields][0]=title&fields[0]=name&fields[1]=slug&fields[2]=description&fields[3]=product_brand`;
-  
+  const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN; // Ensure this environment variable is set
+
   try {
-    const res = await query(url);
-    if (!res || !res.data) {
-      throw new Error('Invalid response from API');
+    const res = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch products. Status: ${res.status}`);
     }
 
-    return res.data.map((product_brands: ProductBrand) => {
+    const data = await res.json();
+
+    return data.map((product_brands: ProductBrand) => {
       const { name, description, image: rawImage, slug, types, product_brand } = product_brands;
       const image = rawImage.url;
       const typesStrings = types.map((type) => type.title); // Assuming 'title' is the string field in the 'types' relation
