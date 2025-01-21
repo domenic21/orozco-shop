@@ -1,5 +1,18 @@
 
 
+  
+  interface ProductsResponse {
+    data: {
+      scraping: {
+        products: {
+          alt: string;
+          image: string;
+          title?: string;
+        }[];
+      };
+    }[];
+  }
+  
 const STRAPI_HOST = process.env.NEXT_PUBLIC_STRAPI_HOST;
 
 export async function getProducts() {
@@ -13,21 +26,25 @@ export async function getProducts() {
 
 export async function getProductsByBrand(
     { brandId }: { brandId: string }
-) {
-    const fetchProducts = async () => {
-        try {
-            const response = await fetch(`${STRAPI_HOST}/api/products?filters[product_brand][slug][$contains]=${brandId}`);
-            const data = await response.json();
-            if (!data || !data.data) {
-                return [];
-            } 
-            
-            return data;
-        } catch (error) {
-            console.error('Error fetching products by brand:', error);
-            return [];
-        }
-    };
-    return fetchProducts();
-}
-
+  ): Promise<ProductsResponse> {
+    try {
+      const response = await fetch(`${STRAPI_HOST}/api/products?filters[product_brand][slug][$contains]=${brandId}`);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch products. Status: ${response.status}`);
+      }
+      
+      const data: ProductsResponse = await response.json();
+  
+      if (!data || !data.data) {
+        console.warn('No products found for the given brand:', brandId);
+        return { data: [] }; // Consistent structure with `data` key
+      }
+  
+      return data;
+    } catch (error) {
+      console.error('Error fetching products by brand:', error);
+      return { data: [] }; // Consistent structure for error cases
+    }
+  }
+  
