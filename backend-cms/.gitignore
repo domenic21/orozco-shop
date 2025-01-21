@@ -1,3 +1,9 @@
+.editorconfig
+.env.example
+.strapi*
+.eslintignore
+
+
 ############################
 # OS X
 ############################
@@ -110,6 +116,7 @@ node_modules
 !.yarn/versions
 .pnp.*
 yarn-error.log
+yarn.lock
 
 ############################
 # Tests

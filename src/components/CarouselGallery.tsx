@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react';
 import AnimatedGallery from './AnimatedGallery'
-import { Button } from "@/components/ui/button"
 import { useGetShowroomCarousel } from '@/api/get-showroom';
 import { motion } from 'framer-motion';
 
@@ -12,7 +11,7 @@ interface CarouselProps {
 export default function ShowroomLocation() {
   
       const result = useGetShowroomCarousel() as CarouselProps | null;
-      const [activeImage, setActiveImage] = useState(0);
+      
     
    const imagesCarousel = result?.resultCarousel?.map(image => `${process.env.NEXT_PUBLIC_STRAPI_HOST}${image}`) || [];
 

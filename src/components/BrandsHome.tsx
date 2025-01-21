@@ -28,7 +28,7 @@ export const BrandsHome = async () => {
      
         <Carousel className="w-full max-w-lg sm:max-w-xs md:max-w-md lg:max-w-2xl xl:max-w-3xl mx-auto">
       <CarouselContent className="-ml-2 md:-ml-3">
-        {productBrands.map((brands: any, index: number) => (
+        {productBrands.map((brands: any , index: number) => (
          
           <CarouselItem key={index} className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/3">
              <Link href={`/products/${brands.name}`} >

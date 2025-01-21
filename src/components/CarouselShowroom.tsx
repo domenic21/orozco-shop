@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useGetShowroomCarousel } from '@/api/get-showroom';
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+
 
 
 interface CarouselProps {

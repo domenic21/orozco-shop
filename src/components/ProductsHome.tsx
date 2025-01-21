@@ -1,14 +1,5 @@
 
 import React from "react";
-import Image from "next/image";
-import { ChevronRight } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { getProducts } from "@/lib/get-products";
 import Link from "next/link";
 

@@ -1,19 +1,9 @@
 'use client';
-import Image from 'next/image'
-import { useState } from 'react'
-import { MapPin, Clock, Phone, Gift, ChevronRight } from 'lucide-react'
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Showroom } from "@/components/Showroom"
 
 export default function ShowroomLocation() {
-  const [activeImage, setActiveImage] = useState(0)
-  const images = [
-    '/fireplace-tiles.jpg?height=600&width=800&text=Showroom+Exterior',
-    '/placeholder.svg?height=600&width=800&text=Bathroom+Display+1',
-    '/placeholder.svg?height=600&width=800&text=Bathroom+Display+2',
-    '/placeholder.svg?height=600&width=800&text=Tile+Selection+Area',
-  ]
+
 
   return (
     <div className="bg-white">

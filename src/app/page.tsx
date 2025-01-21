@@ -1,9 +1,7 @@
 
 import { BrandsHome } from '@/components/BrandsHome'
-import FeatureHome from '@/components/FeatureHome'
 import {Hero} from '@/components/Hero'
 import InstallationHome from '@/components/InstallationHome'
-import {ProductsHome} from '@/components/ProductsHome'
 import ShopCategories from '@/components/ShopCategories'
 import Head from 'next/head'
 

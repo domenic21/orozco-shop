@@ -1,10 +1,5 @@
 'use client';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useGetShowroomInfo } from "@/api/get-showroom";
-import { MapPin, Clock, Phone, ChevronRight } from 'lucide-react'
-import { useState } from 'react';
-import { CarouselShowroom } from '@/components/CarouselShowroom';
 import CarouselGallery from './CarouselGallery';
 import { motion } from 'framer-motion';
 
