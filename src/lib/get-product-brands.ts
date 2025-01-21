@@ -1,6 +1,3 @@
-import { query } from "./strapi";
-
-
 
 export interface ProductBrand {
   id: number;
@@ -50,7 +47,7 @@ export interface ProductBrand {
 }
 
 export async function getProductBrands() {
-  const url = `products-brands?populate[image][fields][0]=url&populate[types][fields][0]=title&fields[0]=name&fields[1]=slug&fields[2]=description&fields[3]=product_brand`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_HOST}/api/products-brands?populate[image][fields][0]=url&populate[types][fields][0]=title&fields[0]=name&fields[1]=slug&fields[2]=description&fields[3]=product_brand`;
   const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN; // Ensure this environment variable is set
 
   try {
