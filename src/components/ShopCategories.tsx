@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin } from 'lucide-react'
+import Link from 'next/link'
 
 const applications = [
   {
@@ -81,14 +82,17 @@ export default function TileApplications() {
         </div>
 
         <div className="mt-12 text-center">
+        <Link href={`/Showroom`}>
           <Button 
             variant="outline"
             size="lg"
             className="group"
           >
+         
             <MapPin className="w-4 h-4 mr-2" />
             Visit Our Showroom
           </Button>
+          </Link>
         </div>
       </div>
     </section>

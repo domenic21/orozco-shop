@@ -30,7 +30,7 @@ const BrandsHome: React.FC = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white flex justify-center items-center">
       <div className="container md:mx-12 px-4 sm:mx-auto">
         <h2 className="text-4xl md:text-5xl font-light text-center mb-4" style={{ color: '#8a817c' }}>
           EXPLORE OUR BRANDS COLLECTIONS
@@ -39,7 +39,7 @@ const BrandsHome: React.FC = () => {
           Discover our exceptional brands, crafted to meet the demands of both residential and commercial spaces, offering elegance and durability.
         </p>
         <Carousel>
-          <CarouselContent className="-ml-2 md:-ml-3">
+          <CarouselContent className="-ml-2 md:-ml-1 ">
             {productBrands.map((brand, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/3">
                 <Link href={`/products/${brand.slug}`}>
@@ -55,6 +55,7 @@ const BrandsHome: React.FC = () => {
                       <p className='uppercase text-center py-2 px-1 text-sm sm:text-base' style={{ color: '#8a817c' }}>
                         {brand.types.join(' & ')}
                       </p>
+                 
                     </CardContent>
                   </Card>
                 </Link>

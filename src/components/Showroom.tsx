@@ -27,7 +27,7 @@ export const Showroom = () => {
   }
 
   const { title, subtitle, image} = result.data;
-  const Image = `${process.env.NEXT_PUBLIC_STRAPI_HOST}${image.url}`;
+  const Image = image.url;
 
  
 //const Address = address.map((address) => `${address.address}`).join(', ');
