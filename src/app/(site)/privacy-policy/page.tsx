@@ -13,11 +13,13 @@ function page() {
         “Merchant”&#41;  in connection with our application, our phsyical location,
         which runs on the Clover Point of Sale system &#40;“Clover POS”&#41;. This
         Privacy Policy does not apply to Company&apos;s privacy practices in any
-        other context. Companys processing of personal data in connection with
+        other context. Company&apos;s processing of personal data in connection with
         our application is governed by this Privacy Policy and our agreements
         with Merchants. In the event of any conflict between this Privacy Policy
         and a customer agreement, the customer agreement will control to the
         extent permitted by applicable law. This Privacy Policy is not a
+        substitute for any privacy policy that a Merchant may be required to
+        provide to their customers, personnel, or other individuals.
         substitute for any privacy policy that a Merchant may be required to
         provide to their customers, personnel, or other individuals.
       </p>
@@ -198,7 +200,7 @@ function page() {
         className="text-blue-500"
       >
         {" "}
-        https://www.clover.com/privacy-policy.
+       here
       </a>
 
       <p className="mb-4">
@@ -252,7 +254,7 @@ function page() {
         href="https://edpb.europa.eu/about-edpb/board/members_en"
         className="text-blue-500"
       >
-        https://edpb.europa.eu/about-edpb/board/members_en
+        here
       </a>
       <p>
         Data subjects in Europe or the UK should direct any rights request to
@@ -289,8 +291,7 @@ function page() {
         information, access and deletion rights in the following ways:
       </p>
       <ul className="">
-        <li>Visiting our website at https://www.manuelhomesupplies.com/</li>
-        <li>Call 732-713-3607</li>
+        
 
         <p className="mb-4">
           Identity verification. The CCPA requires us to verify the identity of
