@@ -1,45 +1,35 @@
 'use client'
 
-import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin } from 'lucide-react'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { getProductsCategory, ProductCategory } from '@/lib/get-product-brands'
 
-const applications = [
-  {
-    title: "Floor",
-    description: "Durable and stylish flooring solutions for every room",
-    image: "/floor-tiles.jpg?height=400&width=400&text=Floor+Tiles"
-  },
-  {
-    title: "Wall",
-    description: "Beautiful wall tiles for any interior space",
-    image: "/wall-tiles.jpg?height=400&width=400&text=Wall+Tiles"
-  },
-  {
-    title: "Backsplash",
-    description: "Kitchen and bathroom backsplash options",
-    image: "/bathroom-tiles.jpg?height=400&width=400&text=Backsplash+Tiles"
-  },
-  {
-    title: "Shower",
-    description: "Waterproof solutions for shower and wet areas",
-    image: "/shower-tiles.jpg?height=400&width=400&text=Shower+Tiles"
-  },
-  {
-    title: "Fireplace",
-    description: "Heat-resistant tiles for fireplace surrounds",
-    image: "/fireplace-tiles.jpg?height=400&width=400&text=Fireplace+Tiles"
-  },
-  {
-    title: "Outdoor",
-    description: "Weather-resistant tiles for outdoor spaces",
-    image: "/categories/outdoor-tiles.jpg?height=400&width=400&text=Outdoor+Tiles"
-  }
-]
 
-export default function TileApplications() {
+ const ProductCategories: React.FC = () => {
+    const [productCategories, setProductCategories] = useState<ProductCategory[]>([]);
+    const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        const fetchCategory = async () => {
+          try {
+            const category = await getProductsCategory();
+            setProductCategories(category);
+          } catch (error) {
+            console.error('Error fetching product brands:', error);
+          } finally {
+            setLoading(false);
+          }
+        };
+    
+        fetchCategory();
+      }, []);
+    
+      if (loading) {
+        return <div>Loading...</div>;
+      }
   return (
     <section className="py-20 bg-white mt-14">
       <div className="container mx-auto px-4">
@@ -52,45 +42,46 @@ export default function TileApplications() {
         </p>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {applications.map((app, index) => (
+          {productCategories.map((category , index)=> (
+             <Link href={`/product-category/${category.slug}`} key={category.slug}>
             <Card 
               key={index} 
               className="bg-white border-gray-100 overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"
             >
               <CardContent className="p-0">
                 <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={app.image}
-                    alt={`${app.title} tiles`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="group-hover:scale-105 transition-transform duration-500"
+                  <img
+                    src={category.image.url}
+                    alt={`${category.product_brand} tiles`}
+                    className="group-hover:scale-105 transition-transform duration-500 object-fill w-full h-full"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
                     <h3 className="text-xl font-light text-white mb-2">
-                      {app.title}
+                      {category.product_category_products.toString()}
                     </h3>
-                    <p className="text-sm text-white/90 hidden group-hover:block transition-all duration-300">
-                      {app.description}
-                    </p>
+                    <div className="text-white bg-black/15   text-sm uppercase">
+                      {category.product_brand}
+                      </div>
                   </div>
                 </div>
               </CardContent>
+          
             </Card>
+            </Link>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center ">
         <Link href={`/Showroom`}>
           <Button 
             variant="outline"
             size="lg"
-            className="group"
+            className="group "
           >
          
             <MapPin className="w-4 h-4 mr-2" />
-            Visit Our Showroom
+           <p className="text-2xl"> Visit Our Showroom </p>
           </Button>
           </Link>
         </div>
@@ -98,3 +89,5 @@ export default function TileApplications() {
     </section>
   )
 }
+
+export default ProductCategories;

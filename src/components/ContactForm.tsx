@@ -11,12 +11,15 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 
 
- const ContactForm = () => {
+const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,6 +29,8 @@ import { Mail, Phone, MapPin } from 'lucide-react';
     setName('')
     setEmail('')
     setMessage('')
+    setLoading(true);
+    setSuccessMessage('');
     const id = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
     const template = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
 
@@ -40,11 +45,21 @@ import { Mail, Phone, MapPin } from 'lucide-react';
       )
       .then(
         (response) => {
+          setSuccessMessage("Message sent successfully");
           console.log("Message sent successfully", response.text);
         },
         (error) => {
+          setSuccessMessage("Message failed to send");
           console.log("Message failed to send", error.text);
         }
+      ).finally(() => {
+        setLoading(false);
+      // Reset form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+      setPhoneNumber('');
+      }
       );
   }
 
@@ -90,6 +105,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
               
               <Button type="submit" className="w-full" value="Send">Send Message</Button>
             </form>
+            {successMessage && <p className="mt-8 text-green-500 text-2xl">{successMessage}</p>}
           </CardContent>
         </Card>
 

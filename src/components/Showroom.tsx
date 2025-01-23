@@ -20,16 +20,15 @@ interface ShowroomInfo {
 
 export const Showroom = () => {
   const result = useGetShowroomInfo().result as { data: ShowroomInfo } | null;
-
-  
   if (!result) {
     return <div>Loading...</div>;
   }
+  //TODO page in construction and new products arrivals notice
 
   const { title, subtitle, image} = result.data;
   const Image = image.url;
 
- 
+
 //const Address = address.map((address) => `${address.address}`).join(', ');
   return (
     <div className="bg-white">
@@ -63,14 +62,10 @@ export const Showroom = () => {
                     {subtitle}
                 </motion.p>
                 </div>
-           
               </div>
             </div>
-        
           </section>
-          
       <CarouselGallery /> 
-   
           </div>
   );
 };

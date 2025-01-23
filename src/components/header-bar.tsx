@@ -36,16 +36,18 @@ export default function HeaderBar() {
 
           <div className="flex items-center gap-3 border-l border-gray-700 pl-4">
             <Link 
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61572174564469"
               className="text-gray-300 hover:text-white transition-colors"
               aria-label="Facebook"
+              target='_blank'
             >
               <Facebook className="w-4 h-4" />
             </Link>
             <Link 
-              href="#"
+              href="https://www.instagram.com/manuelhomesupplies/"
               className="text-gray-300 hover:text-white transition-colors"
               aria-label="Instagram"
+              target='_blank'
             >
               <Instagram className="w-4 h-4" />
             </Link>

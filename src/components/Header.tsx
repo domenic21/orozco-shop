@@ -66,20 +66,20 @@ export default function Header () {
         {isMenuOpen && (
           <div className="md:hidden bg-white py-4">
             <div className="container mx-auto px-4">
-              <Input 
+             {/* <Input 
                 type="search" 
                 placeholder="Search..." 
                 className="w-full mb-4"
               
-              />
+              />*/}
               <nav>
               <ul className=" space-y-4">
                     {[
-                   // { name: 'Products', path: '/products' }, 
-                    //{ name: 'Locations', path: '/locations' },
-                    //{ name: 'Gallery', path: '/gallery' },
-                    { name: '  Construction Services', path: '/Construction' },
-                    { name: 'Contact Us', path: '/Contact' }
+                { name: 'Home', path: '/' },
+                { name: 'Our Showroom', path: '/Showroom' },
+                { name: 'Construction Services', path: '/Construction' },
+                { name: 'Contact Us', path: '/Contact' },
+                   
                     ].map((item) => (
                     <li key={item.name}>
                       <Link href={item.path} className="text-gray-600 hover:text-gray-800 transition-colors">

@@ -1,11 +1,12 @@
-import { getProductsByBrand } from '@/lib/get-products';
+import { getProductsByCategory } from '@/lib/get-products';
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 //import { Button } from "@/components/ui/button"
 //import { Package } from 'lucide-react';
 import React from 'react';
+import { div, p } from 'motion/react-client';
 interface ProductsResponse {
   data: {
-    scraping: {
+    scraping_category: {
       products: Product[];
     };
   }[];
@@ -26,24 +27,27 @@ interface Product {
   alt?: string;
   material?: string;
   dimensions?: string;
+  product_brand?: string;
+
 }
 
 
 
-export default async function ProductPage(props:{params:Promise<{brandId:string}>}) {
+export default async function ProductPage(props:{params:Promise<{categoryId:string}>}) {
   const  params  = await props.params;
-  const products: ProductsResponse = await getProductsByBrand(params.brandId);
+  const products: ProductsResponse = await getProductsByCategory(params.categoryId);
  
-  if (!products || !products.data || products.data.length === 0 || !products.data[0].scraping || !products.data[0].scraping.products) {
+  if (!products || !products.data || products.data.length === 0 || !products.data[0].scraping_category || !products.data[0].scraping_category.products) {
     return <div>No products available</div>;
   }
 
-  const productsArray: Product[] = products.data[0].scraping.products || [];
+  const productsArray: Product[] = products.data[0].scraping_category.products || [];
   const productsCounter = productsArray.length;
 
   return (
     <div className="container mx-auto px-4 py-8">
       <p className='text-right mb-4'>Showing:{productsCounter}</p>
+      
     {/* Header with Filter and Sort 
     <div className="flex justify-between mb-8">
       <Button variant="outline" className="text-sm">
@@ -58,9 +62,11 @@ export default async function ProductPage(props:{params:Promise<{brandId:string}
     {/* Product Grid */}
     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6  bg-[#f5f5f5]">
       {productsArray.map((product) => (
+       
         <Card key={ product.id } className="border-none shadow-none">
           <CardContent className="p-0 space-y-3">
             {/* Product Image Container */}
+            <p>{product.product_brand}</p>
             <div className="relative aspect-square overflow-hidden bg-gray-100">
               <img
                 src={product.image_url || product.image}

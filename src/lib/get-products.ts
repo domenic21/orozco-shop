@@ -52,7 +52,14 @@ export async function getProductsByBrand(brandId: string) {
     };
     return fetchProducts();
 }
-
+export async function getProductsByCategory(categoryId: string) {
+  const fetchProducts = async () => {
+      const response = await fetch(`${STRAPI_HOST}/api/product-category-products?filters[product_category][slug][$contains]=${categoryId}`);
+      const data = await response.json();
+      return data;
+  };
+  return fetchProducts();
+}
 
 
  /* export async function getProductsByBrand(brandId: string): Promise<ProductsResponse> {
