@@ -12,7 +12,7 @@ export default function Header () {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="">
+    <div >
       <HeaderBar />
         {/* Header with Search and Navigation */}
         <header className="bg-white shadow-sm sticky top-0 z-50 ">
@@ -82,7 +82,7 @@ export default function Header () {
                    
                     ].map((item) => (
                     <li key={item.name}>
-                      <Link href={item.path} className="text-gray-600 hover:text-gray-800 transition-colors">
+                      <Link href={item.path} className="text-gray-600 hover:text-gray-800 transition-colors" onClick={() => setIsMenuOpen(false)}>
                       {item.name}
                       </Link>
                     </li>

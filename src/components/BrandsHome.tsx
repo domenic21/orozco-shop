@@ -4,6 +4,7 @@ import { getProductBrands, ProductBrand } from '@/lib/get-product-brands';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { Card, CardContent } from './ui/card';
 import Link from 'next/link';
+import {  ArrowRight } from 'lucide-react';
 
 // Carousel for Brands in Home Page
 const BrandsHome: React.FC = () => {
@@ -38,7 +39,12 @@ const BrandsHome: React.FC = () => {
         <p className="text-gray-600 text-center max-w-4xl mx-auto mb-16 text-lg">
           Discover our exceptional brands, crafted to meet the demands of both residential and commercial spaces, offering elegance and durability.
         </p>
+        <div className='text-center flex items-center justify-center object-right md:hidden lg:hidden  animate-pulse mb-2'>
+          <ArrowRight />
+          <p>Swipe</p>
+        </div>
         <Carousel>
+          
           <CarouselContent className="-ml-2 md:-ml-1 ">
             {productBrands.map((brand, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/3">
@@ -62,8 +68,8 @@ const BrandsHome: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className='hidden md:block lg:block'/>
+          <CarouselNext className='hidden md:block lg:block' />
         </Carousel>
       </div>
     </section>

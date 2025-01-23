@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { HomeInfo } from "@/types/HomeResult";
+import Link from 'next/link';
 
 
 
@@ -68,6 +69,7 @@ export const Hero = () => {
             >
               {description}
             </motion.p>
+            <Link href="#shopCategories" >
             <Button
               variant="outline"
               size="lg"
@@ -76,6 +78,7 @@ export const Hero = () => {
               Explore Collection
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
+            </Link>
           </div>
         </motion.div>
       </section>

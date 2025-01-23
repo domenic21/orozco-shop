@@ -31,7 +31,7 @@ import { getProductsCategory, ProductCategory } from '@/lib/get-product-brands'
         return <div>Loading...</div>;
       }
   return (
-    <section className="py-20 bg-white mt-14">
+    <section className="py-20 bg-white mt-14" id='shopCategories'>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-light text-center mb-4">
           Shop by Application
@@ -41,7 +41,7 @@ import { getProductsCategory, ProductCategory } from '@/lib/get-product-brands'
           Our experts are ready to help you find the perfect solution for your project.
         </p>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 ">
           {productCategories.map((category , index)=> (
              <Link href={`/product-category/${category.slug}`} key={category.slug}>
             <Card 
@@ -56,12 +56,14 @@ import { getProductsCategory, ProductCategory } from '@/lib/get-product-brands'
                     className="group-hover:scale-105 transition-transform duration-500 object-fill w-full h-full"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                    <h3 className="text-xl font-light text-white mb-2">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4  ">
+                    <div className="bg-black/20 backdrop-blur-md rounded-md flex flex-col items-center justify-center p-2">
+                    <h3 className="text-xl font-light text-white mb-2    ">
                       {category.product_category_products.toString()}
                     </h3>
-                    <div className="text-white bg-black/15   text-sm uppercase">
+                    <div className="text-white   text-sm uppercase">
                       {category.product_brand}
+                      </div>
                       </div>
                   </div>
                 </div>
