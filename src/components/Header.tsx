@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Input } from "@/components/ui/input"
+
 import { Menu } from 'lucide-react'
 import HeaderBar from './header-bar'
 

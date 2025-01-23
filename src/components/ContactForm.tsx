@@ -17,7 +17,6 @@ const ContactForm = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
-  const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
 
@@ -29,7 +28,7 @@ const ContactForm = () => {
     setName('')
     setEmail('')
     setMessage('')
-    setLoading(true);
+
     setSuccessMessage('');
     const id = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
     const template = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
@@ -53,7 +52,7 @@ const ContactForm = () => {
           console.log("Message failed to send", error.text);
         }
       ).finally(() => {
-        setLoading(false);
+        
       // Reset form fields
       setName('');
       setEmail('');

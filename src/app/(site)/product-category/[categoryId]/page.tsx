@@ -3,7 +3,8 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 //import { Button } from "@/components/ui/button"
 //import { Package } from 'lucide-react';
 import React from 'react';
-import { div, p } from 'motion/react-client';
+
+
 interface ProductsResponse {
   data: {
     scraping_category: {
