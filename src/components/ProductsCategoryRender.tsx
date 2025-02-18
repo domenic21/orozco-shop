@@ -1,5 +1,5 @@
 "use client";
-import { getProductsByCategory } from '@/lib/get-products';
+
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 //import { Button } from "@/components/ui/button"
 //import { Package } from 'lucide-react';
@@ -32,7 +32,23 @@ interface ProductListProps {
 export default  function ProductCategoryRender({ products }: ProductListProps) {
 
     const [selectedType, setSelectedType] = useState<string | null>(null); // State to store the selected product type
-
+    const [showScroll, setShowScroll] = useState(false);
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 300) {
+          setShowScroll(true);
+        } else {
+          setShowScroll(false);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+  
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     if (products.length === 0) {
       return <div>No products available</div>;
     }
@@ -42,25 +58,10 @@ export default  function ProductCategoryRender({ products }: ProductListProps) {
     const filteredProducts = selectedType
       ? products.filter(product => product.type === selectedType)
       : products; // Filter products based on the selected product type or show all products if no product type is selected
-      const [showScroll, setShowScroll] = useState(false);
+   
       const titleType = selectedType ? `Exclusive Collection Of ${selectedType}` : 'All Products Selected ';
      
-      useEffect(() => {
-        const handleScroll = () => {
-          if (window.scrollY > 300) {
-            setShowScroll(true);
-          } else {
-            setShowScroll(false);
-          }
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
-    
-      const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      };
+     
   
   
   
