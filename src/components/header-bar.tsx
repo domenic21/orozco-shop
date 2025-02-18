@@ -5,6 +5,7 @@ export default function HeaderBar() {
   return (
     <div className="bg-black text-white py-2 text-sm">
       <div className="container mx-auto px-4">
+        
         <div className="flex flex-wrap items-center justify-end gap-4 md:gap-6">
           <Link 
             href="https://maps.app.goo.gl/qGCFZBX6iH2Rym2r8" 
