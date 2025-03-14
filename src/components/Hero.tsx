@@ -17,7 +17,7 @@ export const Hero = () => {
     return <div>Loading...</div>;
   }
 
-  const { title, description, HeroImage } = result.data;
+  const { title, description } = result.data;
   //const image = HeroImage.formats.large.url;
   
   return (

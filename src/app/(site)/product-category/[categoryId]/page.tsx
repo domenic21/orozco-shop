@@ -30,7 +30,7 @@ type Params = Promise<{ categoryId: string }>;
 
 export async function generateMetadata({ params }: { params: Params }) {
   const { categoryId } = await params;
-  let products: Product[] = [];
+  const products: Product[] = [];
   return {
     title: `${categoryId} selection | Manuel Orosco Home Supplies`,
     description: `Explore our range of products in the ${categoryId} category.`,
