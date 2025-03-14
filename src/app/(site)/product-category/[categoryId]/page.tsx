@@ -28,6 +28,30 @@ interface Product {
 }
 type Params = Promise<{ categoryId: string }>;
 
+export async function generateMetadata({ params }: { params: Params }) {
+  const { categoryId } = await params;
+  let products: Product[] = [];
+  return {
+    title: `${categoryId} selection | Manuel Orosco Home Supplies`,
+    description: `Explore our range of products in the ${categoryId} category.`,
+    openGraph: {
+      title: `${categoryId} selection | Manuel Orosco Home Supplies`,
+      description: `Explore our range of products in the ${categoryId} category.`,
+      url: `https://www.manuelorosco.com/${categoryId}`,
+      siteName: 'Manuel Orosco Home Supplies',
+      images: [
+        {
+          url: products[0]?.image_url || '/public/logoLetters.png',
+          width: 800,
+          height: 600,
+          alt: `Image of ${categoryId} products`,
+        },
+      ]
+    
+  },
+  }
+}
+
 export default async function ProductPage  ({params,}:{params:Params}){
   const {categoryId} = await params;
   let products: Product[] = []; // Default to empty array if no products are found for the category ID or if there is an error fetching products

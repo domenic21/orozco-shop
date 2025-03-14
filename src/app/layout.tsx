@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Icons from "@/components/Icons";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,8 +18,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
-  description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco. Transform your home with our expert solutions.",
+  title: {
+    default: "Manuel Orosco Home Supplies | Expert Home Remodeling Supplies & Installations",
+    template: "Manuel Orosco - %s"
+  },
+  description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco Home Supplies.Located in Dunellen, New Jersey. Transform your home with our expert solutions.",
 };
 
 export default function RootLayout({
@@ -31,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Analytics />
         <Header />
         {children}
         <Icons />

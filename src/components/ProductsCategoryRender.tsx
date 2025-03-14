@@ -33,7 +33,8 @@ export default  function ProductCategoryRender({ products }: ProductListProps) {
 
     const [selectedType, setSelectedType] = useState<string | null>(null); // State to store the selected product type
     const [showScroll, setShowScroll] = useState(false);
-    useEffect(() => {
+    
+    useEffect(() => { //SCROLL ARROW
       const handleScroll = () => {
         if (window.scrollY > 300) {
           setShowScroll(true);
@@ -55,7 +56,7 @@ export default  function ProductCategoryRender({ products }: ProductListProps) {
   
     const uniqueTypes = Array.from(new Set(products.map(product => product.type))); // Get unique product types from the products array
    //Set is a new object type in ES6 that allows you to store unique values of any type, whether primitive values or object references.
-    const filteredProducts = selectedType
+    const filteredProducts = selectedType //? means if selectedType is true then do the following
       ? products.filter(product => product.type === selectedType)
       : products; // Filter products based on the selected product type or show all products if no product type is selected
    
