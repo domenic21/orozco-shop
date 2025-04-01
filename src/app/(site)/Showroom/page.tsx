@@ -2,30 +2,19 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Showroom } from "@/components/Showroom"
 
+import Head from "next/head";
 
-export const metadata = {
-  title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
-  description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco. Transform your home with our expert solutions.",
-  openGraph: {
-    title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
-    description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco Home Supplies. Located in Dunellen, NJ. Transform your home with our expert solutions.",
-    url: "https://www.manuelorosco.com/",
-    siteName: "Manuel Orosco Home Supplies",
-    images: [
-      {
-        url: "https://strapi-backend-manuel.s3.us-east-2.amazonaws.com/large_4_20250110_183603_0003_227d23f724.png",
-        width: 1200,
-        height: 630,
-        alt: "Manuel Orosco Home Supplies Logo",
-      },
-    ],
-  },
-}
 
 export default function ShowroomLocation() {
 
 
   return (
+    <>
+      <Head>
+        <title>Showroom Location</title>
+        <meta name="description" content="Discover our showroom location in New Jersey and explore exclusive tile designs, immersive displays, and expert consultations." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
     <div className="bg-white">
       {/* Hero Section */}
       <Showroom />
@@ -57,5 +46,6 @@ export default function ShowroomLocation() {
 
      
     </div>
+    </>
   )
 }

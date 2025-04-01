@@ -106,6 +106,9 @@ export default function Footer() {
               <Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link>
             </p>
             <p className="text-gray-400 text-sm">
+              <Link href="/sitemap" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link>
+            </p>
+            <p className="text-gray-400 text-sm">
               Developed by <a href="https://dominioncodesolutions.com" className="text-gray-300 hover:text-white transition-colors">Dominion Code Solutions</a>
             </p>
            
