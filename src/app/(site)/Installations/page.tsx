@@ -7,6 +7,7 @@ import { Card, CardContent,  CardFooter, CardHeader, CardTitle } from "@/compone
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, PenToolIcon as Tool, Clock, Star, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const services = [
     { id: 1, name: 'Residential Installation', icon: '/floringexample.jpg' },
@@ -23,8 +24,7 @@ const projects = [
     { id: 5, name: 'Mosaic Shower Design', image: '/categories/mosaic-tiles.jpg', category: 'Bathroom' },
     { id: 6, name: 'Restaurant Floor Installation', image: '/tilestock.jpg', category: 'Commercial' },
 ]
-
-export const metadata = {
+ const metadata = {
   title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
   description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco. Transform your home with our expert solutions.",
   openGraph: {
@@ -50,6 +50,17 @@ export default function TileInstallationServices() {
 
   return (
     <div className="container mx-auto px-4 py-12">
+       <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:site_name" content={metadata.openGraph.siteName} />
+        {metadata.openGraph.images.map((image, index) => (
+          <meta key={index} property="og:image" content={image.url} />
+        ))}
+      </Head>
     <h1 className="text-4xl font-bold text-center mb-8">
       Expert Tile Installation Services
     </h1>
