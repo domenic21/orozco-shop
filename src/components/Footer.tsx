@@ -76,8 +76,12 @@ export default function Footer() {
               <Clock className="w-5 h-5 mt-1 text-white" />
               <div className="space-y-2">
                 <div>
-                  <p className="text-white">Mon - Sat</p>
-                  <p className="text-white">8:00am - 5:00pm</p>
+                  <p className="text-white">Mon - Fri</p>
+                  <p className="text-white">8:00am - 7:00pm</p>
+                </div>
+                <div>
+                  <p className="text-white">Sat</p>
+                  <p className="text-white">9:00am - 6:00pm</p>
                 </div>
                 <div>
                   <p className="text-white">Sunday</p>
