@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { HomeInfo } from "@/types/HomeResult";
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -16,8 +17,8 @@ export const Hero = () => {
     return <div>Loading...</div>;
   }
 
-  const { title, description, HeroImage } = result.data;
-  const image = HeroImage.formats.large.url;
+  const { title, description } = result.data;
+  //const image = HeroImage.formats.large.url;
   
   return (
     <main className="flex-grow">
@@ -42,16 +43,18 @@ export const Hero = () => {
           }}
           style={{
             position: 'relative', // Needed for layout
-            backgroundPosition: '50% 50%', // Start position
-      
-                      }}
-                    >
-                      <img
-                        src={image}
-                        alt="Luxury tile installation"
-                        className="absolute inset-0 w-full h-full object-cover opacity-70"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/30" />
+            // Start position
+
+                  }}
+                >
+                  <Image
+                  src='/tilestock.jpg'
+                  alt="Luxury tile installation"
+                  layout="fill"
+                  objectFit="cover"
+                  className="absolute inset-0 w-full h-full opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white/30" />
           <div className="relative h-full container mx-auto px-4 py-20 flex flex-col justify-center">
             <motion.h1
               className="text-4xl md:text-5xl font-light tracking-wider mb-6 text-gray-800"

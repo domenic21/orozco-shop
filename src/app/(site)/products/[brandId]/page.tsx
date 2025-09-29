@@ -40,7 +40,7 @@ export default async function ProductPage(props:{params:Promise<{brandId:string}
 
   const productsArray: Product[] = products.data[0].scraping.products || [];
   const productsCounter = productsArray.length;
-
+  console.log(productsArray );
   return (
     <div className="container mx-auto px-4 py-8">
       <p className='text-right mb-4'>Showing:{productsCounter}</p>
@@ -72,12 +72,16 @@ export default async function ProductPage(props:{params:Promise<{brandId:string}
             
             {/* Product Info */}
             <div className="space-y-1">
-              <h2 className=" sm:font-normal lg:font-bold md:font-semibold bg-black text-white h-auto p-2">{product.name || product.title}</h2>
-              {(product.material && product.dimensions) && (
-                        <p className='text-left py-2 px-1 text-sm sm:text-base' style={{ color: '#8a817c' }}>
-                          {product.material} - {product.dimensions}
-                        </p>
-                      )}
+              <h2 className="sm:font-normal lg:font-bold md:font-semibold bg-black text-white h-auto p-2">
+              {product.name || product.title} - {product.dimensions}
+              </h2>
+              {product.material && product.dimensions && (
+              <div>
+                <p className="text-left py-2 px-1 text-sm sm:text-base" style={{ color: '#8a817c' }}>
+                {product.material} - {product.dimensions}
+                </p>
+              </div>
+              )}
             </div>
           </CardContent>
           {/* Product Footer button card TODO */}

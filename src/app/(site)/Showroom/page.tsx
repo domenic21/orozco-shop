@@ -2,10 +2,19 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Showroom } from "@/components/Showroom"
 
+import Head from "next/head";
+
+
 export default function ShowroomLocation() {
 
 
   return (
+    <>
+      <Head>
+        <title>Showroom Location</title>
+        <meta name="description" content="Discover our showroom location in New Jersey and explore exclusive tile designs, immersive displays, and expert consultations." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
     <div className="bg-white">
       {/* Hero Section */}
       <Showroom />
@@ -37,5 +46,6 @@ export default function ShowroomLocation() {
 
      
     </div>
+    </>
   )
 }

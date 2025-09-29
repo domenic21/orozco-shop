@@ -2,6 +2,8 @@
 
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import Head from 'next/head';
+
 
 export default function ServicesSection() {
   const services = {
@@ -88,6 +90,20 @@ export default function ServicesSection() {
   }
   return (
     <div>
+      <Head>
+        <title>Our Services - Manuel Orosco Construction</title>
+        <meta name="description" content="Explore our wide range of residential, commercial, and general contractor services. From tile installation to restoration and maintenance, we deliver quality craftsmanship in New Jersey." />
+        <meta name="keywords" content="tile installation, bathroom remodeling, kitchen tile, commercial tiling, restoration services, maintenance, custom tile design" />
+        <meta name="author" content="Manuel Orosco Construction" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Our Services - Manuel Orosco Construction" />
+        <meta property="og:description" content="Discover our professional services for residential, commercial, and specialty projects. Quality craftsmanship and customer satisfaction guaranteed." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.manueloroscohomesupplies.com/" />
+        <meta property="og:image" content="https://strapi-backend-manuel.s3.us-east-2.amazonaws.com/small_4_20250110_183603_0003_227d23f724.png" />
+        <meta property="og:image:alt" content="Manuel Orosco Construction Services" />
+        <meta property="og:site_name" content="Manuel Orosco Home supplies " />
+      </Head>
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

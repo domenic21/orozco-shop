@@ -33,10 +33,12 @@ export const ProductsHome = async () => {
             />
           </div>
           <div className="p-4">
+         
             <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
             <p className="text-sm text-gray-600">{product.description}</p>
             <p className="text-sm text-gray-600">{product.brand}</p>
             <p className="text-sm text-gray-600">{product.category}</p>
+
           </div>
         
         </Link>

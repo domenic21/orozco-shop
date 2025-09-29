@@ -61,9 +61,9 @@ import { getProductsCategory, ProductCategory } from '@/lib/get-product-brands'
                     <h3 className="text-xl font-light text-white mb-2    ">
                       {category.product_category_products.toString()}
                     </h3>
-                    <div className="text-white   text-sm uppercase">
+                    {/* <div className="text-white   text-sm uppercase">
                       {category.product_brand}
-                      </div>
+                      </div> */}
                       </div>
                   </div>
                 </div>

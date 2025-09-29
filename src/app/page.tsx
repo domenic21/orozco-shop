@@ -1,11 +1,29 @@
 
 import  BrandsHome  from '@/components/BrandsHome'
-import {Hero} from '@/components/Hero'
+import { HeroCarousel } from '@/components/HeroCarrousel'
 import InstallationHome from '@/components/InstallationHome'
 import ShopCategories from '@/components/ShopCategories'
 import Head from 'next/head'
+import Image from 'next/image'
 
-
+export const metadata = {
+  title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
+  description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco. Transform your home with our expert solutions.",
+  openGraph: {
+    title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
+    description: "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco Home Supplies. Located in Dunellen, NJ. Transform your home with our expert solutions.",
+    url: "https://www.manuelorosco.com/",
+    siteName: "Manuel Orosco Home Supplies",
+    images: [
+      {
+        url: "https://strapi-backend-manuel.s3.us-east-2.amazonaws.com/large_4_20250110_183603_0003_227d23f724.png",
+        width: 1200,
+        height: 630,
+        alt: "Manuel Orosco Home Supplies Logo",
+      },
+    ],
+  },
+}
 
 export default function HomePage() {
 
@@ -18,16 +36,21 @@ export default function HomePage() {
         content= "Discover top-quality home remodeling supplies and professional installation services at Manuel Orosco. Transform your home with our expert solutions."/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
- 
+      {/* <Hero /> */}
+      <HeroCarousel />
       <ShopCategories />
       <BrandsHome />
-
+      {/* financing image information */}
+      <div className="flex justify-center my-4">
+        <Image
+          src="/financingLogo.png"
+          alt="Financing Options"
+          width={300}
+          height={750}
+          className="w-auto h-52"
+        />
+      </div>
       <InstallationHome />
-  
-      
-
-     
-    </div>
+        </div>
   )
 }
