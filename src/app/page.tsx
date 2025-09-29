@@ -4,6 +4,7 @@ import { HeroCarousel } from '@/components/HeroCarrousel'
 import InstallationHome from '@/components/InstallationHome'
 import ShopCategories from '@/components/ShopCategories'
 import Head from 'next/head'
+import Image from 'next/image'
 
 export const metadata = {
   title: "Manuel Orosco Home Supplies | Expert Home Remodeling & Installations",
@@ -39,12 +40,17 @@ export default function HomePage() {
       <HeroCarousel />
       <ShopCategories />
       <BrandsHome />
-
+      {/* financing image information */}
+      <div className="flex justify-center my-4">
+        <Image
+          src="/financingLogo.png"
+          alt="Financing Options"
+          width={300}
+          height={750}
+          className="w-auto h-52"
+        />
+      </div>
       <InstallationHome />
-  
-      
-
-     
-    </div>
+        </div>
   )
 }

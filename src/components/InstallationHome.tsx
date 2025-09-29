@@ -19,6 +19,11 @@ export default function TileInstallationServices() {
 return (
 
 <section className="py-20 bg-gray-100">
+  <div className="container mx-auto px-4 text-center">
+    <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-800">
+      Professional Tile Installation Services
+    </h1>
+    </div>
 <div className="container mx-auto px-4 text-center">
   <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-800">
     TRANSFORM YOUR SPACE
